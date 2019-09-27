@@ -1,0 +1,17 @@
+<div class="header">
+  <a routerLink="/">
+    <div>
+        <i class="fas fa-arrow-left"></i>
+    </div>
+  </a>
+  <h1>Create new item</h1>
+</div>
+
+<div class="wrap">
+  <input #liName type="text" placeholder="New item title..">
+  <a routerLink="/" (click)="addLi(liName.value)">
+    <div>
+        <i class="fas fa-chevron-right"></i>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,24 @@
+<div class="header">
+  <div class="wrap">
+    <h1>Sayer</h1>
+    <h4>World's most used time waster</h4>
+  </div>
+</div>
+
+
+<li *ngFor="let item of globalService.ITEMS; let index = index" class="item" (click)="liClick(item)">
+    <p>{{ item.name }}</p>
+    <a routerLink="/item/{{item.id}}" >
+      <div class="add">
+        <p>{{ item.comment.length }}</p>
+      </div>
+    </a>
+    <div  class="remove" (click)="delete(item.id)"  *ngIf="item.is == true" >
+      <p>Delete</p>
+    </div>
+</li>
+<a routerLink="/createItem" >
+  <div class="add">
+    <i class="fas fa-plus"></i>
+  </div>
+</a>

@@ -1,0 +1,24 @@
+<div class="header">
+    <a routerLink="/">
+        <div>
+            <i class="fas fa-arrow-left"></i>
+        </div>
+    </a>
+    <h1>{{selectedItem.name}}</h1>
+</div>
+<div class="wrap">
+    <div *ngFor="let comment of selectedItem.comment; let index = index; let odd = odd; let even = even" 
+            [ngClass]="{ odd: odd, even: even }"
+            class="comment">
+        <div class="logo"></div>
+        <p>{{comment}}</p>
+    </div> 
+</div>
+<div class="addComment">
+    <input type="text" #commentText [(ngModel)]="clearValue" placeholder="New comment goes here...">
+    <a  (click)="add(commentText.value)">
+        <div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </a>
+</div> 
